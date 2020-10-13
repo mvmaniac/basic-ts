@@ -29,6 +29,12 @@
     npm i -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
     ```
 
+* lite-server
+
+    ``` javascript
+    npm i -D lite-server
+    ```
+
 ### 5. etc
 
 * 명령어
