@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tsc ./src/index.ts -w | lite-server --baseDir=./src"
+    "dev": "npx tsc --project tsconfig.json -w | lite-server"
   },
   "author": "YHS",
   "license": "MIT",
