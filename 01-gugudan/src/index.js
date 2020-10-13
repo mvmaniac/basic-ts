@@ -20,8 +20,8 @@ function generateNumber() {
 function displayNumber() {
     word.textContent = numberOne + " \uACF1\uD558\uAE30 " + numberTwo + "\uB294 ?";
 }
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
     if (result === Number(input.value)) {
         resultDiv.textContent = '딩동댕';
         generateNumber();

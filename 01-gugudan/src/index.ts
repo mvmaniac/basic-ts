@@ -28,8 +28,8 @@ function displayNumber() {
   word.textContent = `${numberOne} 곱하기 ${numberTwo}는 ?`;
 }
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
 
   if (result === Number(input.value)) {
     resultDiv.textContent = '딩동댕';
