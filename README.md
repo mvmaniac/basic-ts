@@ -35,6 +35,12 @@
     npm i -D lite-server
     ```
 
+* concurrently
+
+    ``` javascript
+    npm i -D concurrently
+    ```
+
 ### 5. etc
 
 * 명령어
