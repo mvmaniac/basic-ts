@@ -16,7 +16,7 @@ const score = {
   PAPER: -1
 } as const;
 
-let imgCoords: RPS[keyof RPS] = '0';
+let coords: RPS[keyof RPS] = '0';
 let point = 0;
 let interval: number;
 
@@ -30,17 +30,17 @@ function computerChoice(coords: RPS[keyof RPS]): keyof RPS {
 
 function intervalMaker() {
   interval = setInterval(function intervalHandler() {
-    if (imgCoords === rps.ROCK) {
-      imgCoords = rps.SCISSORS;
-    } else if (imgCoords === rps.SCISSORS) {
-      imgCoords = rps.PAPER;
+    if (coords === rps.ROCK) {
+      coords = rps.SCISSORS;
+    } else if (coords === rps.SCISSORS) {
+      coords = rps.PAPER;
     } else {
-      imgCoords = rps.ROCK;
+      coords = rps.ROCK;
     }
 
     (document.querySelector(
       '#computer'
-    ) as HTMLDivElement).style.background = `url(https://en.pimg.jp/023/182/267/1/23182267.jpg) ${imgCoords} 0`;
+    ) as HTMLDivElement).style.background = `url(https://en.pimg.jp/023/182/267/1/23182267.jpg) ${coords} 0`;
   }, 100);
 }
 
@@ -53,7 +53,7 @@ document.querySelectorAll('.btn').forEach((button) => {
 
     const myChoice = this.getAttribute('id') as keyof RPS;
     const myScore = score[myChoice];
-    const computerScore = score[computerChoice(imgCoords)];
+    const computerScore = score[computerChoice(coords)];
     const diff = myScore - computerScore;
 
     if (diff === 0) {
