@@ -25,6 +25,6 @@
     "prettier"
   ],
   "rules": {
-    
+    "@typescript-eslint/no-shadow": ["warn"]
   }
 }
