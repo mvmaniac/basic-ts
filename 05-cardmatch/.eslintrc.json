@@ -25,6 +25,7 @@
     "prettier"
   ],
   "rules": {
+    "prettier/prettier": ["error"],
     "@typescript-eslint/no-shadow": ["warn"]
   }
 }
