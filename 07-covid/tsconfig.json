@@ -6,7 +6,8 @@
     "outDir": "dist",
 
     "moduleResolution": "Node",
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "typeRoots": ["./node_modules/@types", "types"]
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "types/**/*.d.ts"]
 }
