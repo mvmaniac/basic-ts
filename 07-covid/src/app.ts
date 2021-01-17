@@ -27,24 +27,25 @@ const recoveredList = $('.recovered-list') as HTMLOListElement;
 const deathSpinner = createSpinnerElement('deaths-spinner');
 const recoveredSpinner = createSpinnerElement('recovered-spinner');
 
-function createSpinnerElement(id: any) {
+function createSpinnerElement(id: string) {
   const wrapperDiv = document.createElement('div');
   wrapperDiv.setAttribute('id', id);
   wrapperDiv.setAttribute(
     'class',
     'spinner-wrapper flex justify-center align-center'
   );
+
   const spinnerDiv = document.createElement('div');
   spinnerDiv.setAttribute('class', 'ripple-spinner');
   spinnerDiv.appendChild(document.createElement('div'));
   spinnerDiv.appendChild(document.createElement('div'));
+
   wrapperDiv.appendChild(spinnerDiv);
   return wrapperDiv;
 }
 
 // state
 let isDeathLoading = false;
-const isRecoveredLoading = false;
 
 // api
 function fetchCovidSummary(): Promise<AxiosResponse<CovidSummaryResponse>> {
@@ -216,8 +217,9 @@ async function setupData() {
   // renderChart();
 }
 
-function renderChart(data: any, labels: any) {
-  const ctx = $('#lineChart').getContext('2d');
+function renderChart(data: number[], labels: string[]) {
+  const lineChart = $('#lineChart') as HTMLCanvasElement;
+  const ctx = lineChart.getContext('2d') as CanvasRenderingContext2D;
   const defaultLabel = [
     'January',
     'February',
@@ -228,8 +230,10 @@ function renderChart(data: any, labels: any) {
     'July'
   ];
   const defaultData = [0, 10, 5, 2, 20, 30, 45];
+
   Chart.defaults.global.defaultFontColor = '#f5eaea';
   Chart.defaults.global.defaultFontFamily = 'Exo 2';
+
   const chart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -247,13 +251,14 @@ function renderChart(data: any, labels: any) {
   });
 }
 
-function setChartData(data: any) {
-  const chartData = data.slice(-14).map((value: any) => value.Cases);
+function setChartData(data: CountryInfoResponse) {
+  const chartData = data.slice(-14).map((value: CountryInfo) => value.Cases);
   const chartLabel = data
     .slice(-14)
-    .map((value: any) =>
+    .map((value: CountryInfo) =>
       new Date(value.Date).toLocaleDateString().slice(5, -1)
     );
+
   renderChart(chartData, chartLabel);
 }
 
