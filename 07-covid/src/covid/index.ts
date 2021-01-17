@@ -1,4 +1,4 @@
-interface Country {
+export interface Country {
   ID: string;
   Country: string;
   CountryCode: string;
@@ -30,3 +30,18 @@ export interface CovidSummaryResponse {
   Countries: Country[];
   Date: string;
 }
+
+export interface CountryInfo {
+  Country: string;
+  CountryCode: string;
+  Province: string;
+  City: string;
+  CityCode: string;
+  Lat: string;
+  Lon: string;
+  Cases: number;
+  Status: string;
+  Date: string;
+}
+
+export type CountryInfoResponse = CountryInfo[];
