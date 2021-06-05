@@ -63,13 +63,13 @@ function setCard(horizontal: number, vertical: number) {
         clickCard.push(this);
 
         if (clickCard.length === 2) {
-          const firstBackground: string = (clickCard[0].querySelector(
-            '.card-back'
-          ) as HTMLDivElement).style.backgroundColor;
+          const firstBackground: string = (
+            clickCard[0].querySelector('.card-back') as HTMLDivElement
+          ).style.backgroundColor;
 
-          const secondBackground: string = (clickCard[1].querySelector(
-            '.card-back'
-          ) as HTMLDivElement).style.backgroundColor;
+          const secondBackground: string = (
+            clickCard[1].querySelector('.card-back') as HTMLDivElement
+          ).style.backgroundColor;
 
           if (firstBackground === secondBackground) {
             completedCard.push(clickCard[0]);

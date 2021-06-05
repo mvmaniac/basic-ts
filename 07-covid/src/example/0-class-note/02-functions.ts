@@ -18,7 +18,7 @@ sum(10, 20);
 
 // 함수의 옵셔널 파라미터
 // 아니면 기본값 매개변수 값을 주면 될 듯?
-function log(a: string, b?: string, c?: string) {}
+function logs(a: string, b?: string, c?: string) {}
 
-log('hello world');
-log('hello world', '2');
+logs('hello world');
+logs('hello world', '2');

@@ -181,9 +181,8 @@ function connectCardDOM({
     name.textContent = '영웅';
     cardEl.appendChild(name);
   } else {
-    (cardEl.querySelector(
-      '.card-cost'
-    ) as HTMLDivElement).textContent = data.hp.toString();
+    (cardEl.querySelector('.card-cost') as HTMLDivElement).textContent =
+      data.hp.toString();
   }
 
   cardEl.addEventListener('click', () => {
@@ -288,7 +287,7 @@ function turnAction({cardEl, data}: {cardEl: HTMLDivElement; data: Card}) {
   }
 }
 
-turnButton.addEventListener('click', function clickHandler() {
+turnButton.addEventListener('click', () => {
   const target = turn ? me : opponent;
 
   document.getElementById('rival')!.classList.toggle('turn');

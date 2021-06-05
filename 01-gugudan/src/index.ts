@@ -3,20 +3,20 @@ let numberTwo: number;
 let result: number;
 
 const word = document.createElement('div');
-document.body.append(word);
+document.body.appendChild(word);
 
 const form = document.createElement('form');
-document.body.append(form);
+document.body.appendChild(form);
 
 const input = document.createElement('input');
-form.append(input);
+form.appendChild(input);
 
 const button = document.createElement('button');
 button.textContent = '입력!';
-form.append(button);
+form.appendChild(button);
 
 const resultDiv = document.createElement('div');
-document.body.append(resultDiv);
+document.body.appendChild(resultDiv);
 
 function generateNumber() {
   numberOne = Math.ceil(Math.random() * 9);

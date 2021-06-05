@@ -4,19 +4,19 @@ let candidate: number[];
 let array: number[];
 
 const result = document.createElement('h1');
-body.append(result);
+body.appendChild(result);
 
 const form = document.createElement('form');
-body.append(form);
+body.appendChild(form);
 
 const input = document.createElement('input');
 input.type = 'text';
 input.maxLength = 4;
-form.append(input);
+form.appendChild(input);
 
 const button = document.createElement('button');
 button.textContent = '입력!';
-form.append(button);
+form.appendChild(button);
 
 let wrongCount = 0;
 

@@ -29,7 +29,7 @@ function computerChoice(coords: RPS[keyof RPS]): keyof RPS {
 }
 
 function intervalMaker() {
-  interval = setInterval(function intervalHandler() {
+  interval = setInterval(() => {
     if (coords === rps.ROCK) {
       coords = rps.SCISSORS;
     } else if (coords === rps.SCISSORS) {
@@ -38,38 +38,38 @@ function intervalMaker() {
       coords = rps.ROCK;
     }
 
-    (document.querySelector(
-      '#computer'
-    ) as HTMLDivElement).style.background = `url(https://en.pimg.jp/023/182/267/1/23182267.jpg) ${coords} 0`;
+    (
+      document.querySelector('#computer') as HTMLDivElement
+    ).style.background = `url(https://en.pimg.jp/023/182/267/1/23182267.jpg) ${coords} 0`;
   }, 100);
 }
 
 document.querySelectorAll('.btn').forEach((button) => {
-  button.addEventListener('click', function clickHandler(
-    this: HTMLButtonElement
-  ) {
-    clearInterval(interval);
-    setTimeout(intervalMaker, 2000);
+  button.addEventListener(
+    'click',
+    function clickHandler(this: HTMLButtonElement) {
+      clearInterval(interval);
+      setTimeout(intervalMaker, 2000);
 
-    const myChoice = this.getAttribute('id') as keyof RPS;
-    const myScore = score[myChoice];
-    const computerScore = score[computerChoice(coords)];
-    const diff = myScore - computerScore;
+      const myChoice = this.getAttribute('id') as keyof RPS;
+      const myScore = score[myChoice];
+      const computerScore = score[computerChoice(coords)];
+      const diff = myScore - computerScore;
 
-    if (diff === 0) {
-      console.log('비겼습니다');
-    } else if ([-1, 2].includes(diff)) {
-      console.log('이겼습니다!');
-      point += 1;
-    } else {
-      console.log('졌습니다 ㅠㅠ');
-      point -= 1;
+      if (diff === 0) {
+        console.log('비겼습니다');
+      } else if ([-1, 2].includes(diff)) {
+        console.log('이겼습니다!');
+        point += 1;
+      } else {
+        console.log('졌습니다 ㅠㅠ');
+        point -= 1;
+      }
+
+      (document.querySelector('#point') as HTMLDivElement).textContent =
+        point.toString();
     }
-
-    (document.querySelector(
-      '#point'
-    ) as HTMLDivElement).textContent = point.toString();
-  });
+  );
 });
 
 intervalMaker();
