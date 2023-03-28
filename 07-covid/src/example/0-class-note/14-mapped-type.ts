@@ -1,5 +1,5 @@
 type Heroes = 'Hulk' | 'Capt' | 'Thro';
-type HeroAges = {[K in Heroes]: number};
+type HeroAges = { [K in Heroes]: number };
 
 // Heroes 타입 값이 키값이 됨
 const ages: HeroAges = {

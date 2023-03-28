@@ -77,12 +77,12 @@ async function handleListClick(event) {
   clearRecoveredList();
   startLoadingAnimation();
   isDeathLoading = true;
-  const {data: deathResponse} = await fetchCountryInfo(selectedId, 'deaths');
-  const {data: recoveredResponse} = await fetchCountryInfo(
+  const { data: deathResponse } = await fetchCountryInfo(selectedId, 'deaths');
+  const { data: recoveredResponse } = await fetchCountryInfo(
     selectedId,
     'recovered'
   );
-  const {data: confirmedResponse} = await fetchCountryInfo(
+  const { data: confirmedResponse } = await fetchCountryInfo(
     selectedId,
     'confirmed'
   );
@@ -161,7 +161,7 @@ function endLoadingAnimation() {
 
 //
 async function setupData() {
-  const {data} = await fetchCovidSummary();
+  const { data } = await fetchCovidSummary();
   console.log(data);
   setTotalConfirmedNumber(data);
   setTotalDeathsByWorld(data);

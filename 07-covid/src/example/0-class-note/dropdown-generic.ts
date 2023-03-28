@@ -9,9 +9,9 @@ interface DropdownItem<T> {
 // }
 
 const emails: DropdownItem<string>[] = [
-  {value: 'naver.com', selected: true},
-  {value: 'gmail.com', selected: false},
-  {value: 'hanmail.net', selected: false}
+  { value: 'naver.com', selected: true },
+  { value: 'gmail.com', selected: false },
+  { value: 'hanmail.net', selected: false }
 ];
 
 // interface ProductNumber {
@@ -25,9 +25,9 @@ const emails: DropdownItem<string>[] = [
 // }
 
 const numberOfProducts: DropdownItem<number>[] = [
-  {value: 1, selected: true},
-  {value: 2, selected: false},
-  {value: 3, selected: false}
+  { value: 1, selected: true },
+  { value: 2, selected: false },
+  { value: 3, selected: false }
 ];
 
 function createDropdownItem(item: DropdownItem<string> | DropdownItem<number>) {

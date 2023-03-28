@@ -20,16 +20,16 @@ let coords: RPS[keyof RPS] = '0';
 let point = 0;
 let interval: number;
 
-function computerChoice(coords: RPS[keyof RPS]): keyof RPS {
+function computerChoice(coord: RPS[keyof RPS]): keyof RPS {
   return (
     (Object.keys(rps) as ['ROCK', 'SCISSORS', 'PAPER']).find(
-      (key) => rps[key] === coords
+      (key) => rps[key] === coord
     ) ?? 'ROCK'
   );
 }
 
 function intervalMaker() {
-  interval = setInterval(() => {
+  interval = window.setInterval(() => {
     if (coords === rps.ROCK) {
       coords = rps.SCISSORS;
     } else if (coords === rps.SCISSORS) {

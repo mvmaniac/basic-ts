@@ -42,8 +42,8 @@ function askSomeone1(someone: Developer5 | Person5) {
 }
 
 // 인터페이스에 있는 속성만 있으면 됨
-askSomeone1({name: '디벨로퍼', skill: '웹 개발'});
-askSomeone1({name: '캡틴', age: 100});
+askSomeone1({ name: '디벨로퍼', skill: '웹 개발' });
+askSomeone1({ name: '캡틴', age: 100 });
 
 // 인터섹션 타입
 // const capt5: string & number & boolean = ''; // string 이고 number 이고 boolean 인 값이 없기 때문에 에러남?

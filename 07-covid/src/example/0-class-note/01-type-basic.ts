@@ -23,7 +23,7 @@ const obj: object = {};
 //   age: 100
 // };
 
-const person: {name: string; age: number} = {
+const person: { name: string; age: number } = {
   name: 'Capt',
   age: 100
 };

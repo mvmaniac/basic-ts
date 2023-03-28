@@ -9,7 +9,7 @@ interface Person11 {
 }
 
 function introduce(): Developer11 | Person11 {
-  return {name: 'Tony', age: 33, skill: 'Iron Marking'};
+  return { name: 'Tony', age: 33, skill: 'Iron Marking' };
 }
 
 const tony = introduce();
@@ -19,10 +19,10 @@ const tony = introduce();
 
 // 아래와 같이 타입 단언으로 속성 값을 가져올 수 있음
 if ((tony as Developer11).skill) {
-  const {skill} = tony as Developer11;
+  const { skill } = tony as Developer11;
   console.log(skill);
 } else if ((tony as Person11).age) {
-  const {age} = tony as Person11;
+  const { age } = tony as Person11;
   console.log(age);
 }
 

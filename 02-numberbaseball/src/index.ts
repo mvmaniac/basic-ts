@@ -1,4 +1,4 @@
-const {body} = document;
+const { body } = document;
 
 let candidate: number[];
 let array: number[];
