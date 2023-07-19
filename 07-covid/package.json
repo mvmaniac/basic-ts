@@ -5,32 +5,32 @@
   "main": "app.js",
   "scripts": {
     "tsc": "npx tsc --project tsconfig.json -w",
-    "lite": "lite-server",
-    "dev": "concurrently npm:tsc npm:lite",
+    "serve": "serve",
+    "dev": "concurrently npm:tsc npm:serve",
     "babel": "npx babel src --out-dir lib --extensions \".ts,.tsx\""
   },
   "author": "YHS",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.3.4",
-    "chart.js": "^4.2.1"
+    "axios": "^1.4.0",
+    "chart.js": "^4.3.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-typescript": "^7.21.0",
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-typescript": "^7.22.5",
     "@types/chart.js": "^2.9.37",
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
-    "concurrently": "^8.0.1",
-    "eslint": "^8.37.0",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.45.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
-    "lite-server": "^2.6.1",
-    "prettier": "^2.8.7",
-    "typescript": "^5.0.2"
+    "prettier": "^3.0.0",
+    "serve": "^14.2.0",
+    "typescript": "^5.1.6"
   }
 }
