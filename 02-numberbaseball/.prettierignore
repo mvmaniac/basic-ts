@@ -1,0 +1,9 @@
+# file
+.gitignore
+
+package.json
+package-lock.json
+
+# folder
+**/node_modules/**/*
+**/dist/**/*
