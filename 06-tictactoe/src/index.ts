@@ -9,11 +9,11 @@ let count = 0;
 function callback(event: MouseEvent) {
   const rowIndex: number = rows.indexOf(
     (event.currentTarget as HTMLTableCellElement)
-      .parentNode as HTMLTableRowElement
+      .parentNode as HTMLTableRowElement,
   );
 
   const cellIndex: number = cells[rowIndex].indexOf(
-    event.currentTarget as HTMLTableCellElement
+    event.currentTarget as HTMLTableCellElement,
   );
 
   count += 1;

@@ -8,7 +8,7 @@ interface User {
 // 변수에 인터페이스 활용
 const peter3: User = {
   age: 33,
-  name: '피터'
+  name: '피터',
 };
 
 // 함수에 인터페이스 활용
@@ -19,7 +19,7 @@ function getUser(user: User) {
 // User 인터페이스 속성 규칙에 맞으면 됨
 const capt3 = {
   age: 33,
-  name: '캡틴'
+  name: '캡틴',
 };
 
 getUser(capt3);
@@ -48,7 +48,7 @@ interface StringRegexDictionary {
 
 const sringRegEx: StringRegexDictionary = {
   cssFile: /\.css$/,
-  jsFile: /\.js$/
+  jsFile: /\.js$/,
 };
 
 // 인터페이스 확장
@@ -64,5 +64,5 @@ interface Developer3 extends Person3 {
 const dev: Developer3 = {
   language: 'ts',
   age: 100,
-  name: '캡틴'
+  name: '캡틴',
 };

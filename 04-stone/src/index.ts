@@ -22,7 +22,7 @@ const opponent: IPlayer = {
   heroData: null,
   fieldData: [],
   chosenCard: null,
-  chosenCardData: null
+  chosenCardData: null,
 };
 
 const me: IPlayer = {
@@ -34,7 +34,7 @@ const me: IPlayer = {
   heroData: null,
   fieldData: [],
   chosenCard: null,
-  chosenCardData: null
+  chosenCardData: null,
 };
 
 interface Card {
@@ -132,7 +132,7 @@ function redrawHero(target: IPlayer) {
   connectCardDOM({
     data: draftTarget.heroData,
     DOM: draftTarget.hero,
-    hero: true
+    hero: true,
   });
 }
 
@@ -160,7 +160,7 @@ function redrawScreen({ mine }: { mine: boolean }) {
 function connectCardDOM({
   data,
   DOM,
-  hero = false
+  hero = false,
 }: {
   data: Card;
   DOM: HTMLDivElement;

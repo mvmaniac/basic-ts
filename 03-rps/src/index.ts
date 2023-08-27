@@ -7,13 +7,13 @@ interface RPS {
 const rps: RPS = {
   ROCK: '0',
   SCISSORS: '-142px',
-  PAPER: '-284px'
+  PAPER: '-284px',
 };
 
 const score = {
   ROCK: 0,
   SCISSORS: 1,
-  PAPER: -1
+  PAPER: -1,
 } as const;
 
 let coords: RPS[keyof RPS] = '0';
@@ -23,7 +23,7 @@ let interval: number;
 function computerChoice(coord: RPS[keyof RPS]): keyof RPS {
   return (
     (Object.keys(rps) as ['ROCK', 'SCISSORS', 'PAPER']).find(
-      (key) => rps[key] === coord
+      (key) => rps[key] === coord,
     ) ?? 'ROCK'
   );
 }
@@ -68,7 +68,7 @@ document.querySelectorAll('.btn').forEach((button) => {
 
       (document.querySelector('#point') as HTMLDivElement).textContent =
         point.toString();
-    }
+    },
   );
 });
 

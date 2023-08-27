@@ -24,7 +24,7 @@ interface DropdownItem1 {
 
 const dropdown1: DropdownItem1 = {
   value: 'abc',
-  selected: true
+  selected: true,
 };
 
 interface DropdownItem2<T> {
@@ -34,7 +34,7 @@ interface DropdownItem2<T> {
 
 const dropdown2: DropdownItem2<string> = {
   value: 'abc',
-  selected: true
+  selected: true,
 };
 
 // 제네릭의 타입제한

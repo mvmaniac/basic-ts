@@ -13,7 +13,7 @@ interface Contact {
 enum PhoneTypes {
   HOME = 'home',
   OFFICE = 'office',
-  STUDIO = 'studio'
+  STUDIO = 'studio',
 }
 
 // api
@@ -26,34 +26,34 @@ function fetchContacts(): Promise<Contact[]> {
       address: 'Malibu',
       phones: {
         home: {
-          num: 11122223333
+          num: 11122223333,
         },
         office: {
-          num: 44455556666
-        }
-      }
+          num: 44455556666,
+        },
+      },
     },
     {
       name: 'Banner',
       address: 'New York',
       phones: {
         home: {
-          num: 77788889999
-        }
-      }
+          num: 77788889999,
+        },
+      },
     },
     {
       name: '마동석',
       address: '서울시 강남구',
       phones: {
         home: {
-          num: 213423452
+          num: 213423452,
         },
         studio: {
-          num: 314882045
-        }
-      }
-    }
+          num: 314882045,
+        },
+      },
+    },
   ];
 
   return new Promise((resolve) => {
@@ -86,7 +86,7 @@ class AddressBook {
 
   findContactByPhone(phoneNumber: number, phoneType: PhoneTypes): Contact[] {
     return this.contacts.filter(
-      (contact) => contact.phones[phoneType].num === phoneNumber
+      (contact) => contact.phones[phoneType].num === phoneNumber,
     );
   }
 

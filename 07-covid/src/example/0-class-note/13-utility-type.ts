@@ -14,8 +14,8 @@ function fetchProducts(): Promise<Product[]> {
       name: '상품명',
       price: 1000,
       brand: '브랜드명',
-      stock: 10
-    }
+      stock: 10,
+    },
   ];
 
   return Promise.resolve(products);
@@ -37,7 +37,7 @@ function fetchProducts(): Promise<Product[]> {
 type ShoppingItemPick = Pick<Product, 'id' | 'name' | 'price'>;
 
 function displayProductDetail(
-  shoppingItem: Pick<Product, 'id' | 'name' | 'price'>
+  shoppingItem: Pick<Product, 'id' | 'name' | 'price'>,
 ) {}
 
 // 3. 특정 상품 정보를 업데이트(갱신)하는 함수

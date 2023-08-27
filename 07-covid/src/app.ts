@@ -5,7 +5,7 @@ import {
   CovidSummaryResponse,
   CountryInfoResponse,
   Country,
-  CountryInfo
+  CountryInfo,
 } from './covid/index';
 
 // utils
@@ -22,7 +22,7 @@ function createSpinnerElement(id: string) {
   wrapperDiv.setAttribute('id', id);
   wrapperDiv.setAttribute(
     'class',
-    'spinner-wrapper flex justify-center align-center'
+    'spinner-wrapper flex justify-center align-center',
   );
 
   const spinnerDiv = document.createElement('div');
@@ -57,12 +57,12 @@ function fetchCovidSummary(): Promise<AxiosResponse<CovidSummaryResponse>> {
 enum CovidStatus {
   Confirmed = 'confirmed',
   Recovered = 'recovered',
-  Deaths = 'deaths'
+  Deaths = 'deaths',
 }
 
 function fetchCountryInfo(
   countryName: string | undefined,
-  status: CovidStatus
+  status: CovidStatus,
 ): Promise<AxiosResponse<CountryInfoResponse>> {
   // status params: confirmed, recovered, deaths
   const url = `https://api.covid19api.com/country/${countryName}/status/${status}`;
@@ -73,7 +73,7 @@ function setTotalConfirmedNumber(data: CovidSummaryResponse) {
   confirmedTotal.innerText = data.Countries.reduce(
     // eslint-disable-next-line no-return-assign, no-param-reassign
     (total: number, current: Country) => (total += current.TotalConfirmed),
-    0
+    0,
   ).toString();
 }
 
@@ -81,7 +81,7 @@ function setTotalDeathsByWorld(data: CovidSummaryResponse) {
   deathsTotal.innerText = data.Countries.reduce(
     // eslint-disable-next-line no-return-assign, no-param-reassign
     (total: number, current: Country) => (total += current.TotalDeaths),
-    0
+    0,
   ).toString();
 }
 
@@ -89,13 +89,13 @@ function setTotalRecoveredByWorld(data: CovidSummaryResponse) {
   recoveredTotal.innerText = data.Countries.reduce(
     // eslint-disable-next-line no-return-assign, no-param-reassign
     (total: number, current: Country) => (total += current.TotalRecovered),
-    0
+    0,
   ).toString();
 }
 
 function setCountryRanksByConfirmedCases(data: CovidSummaryResponse) {
   const sorted = data.Countries.sort(
-    (a: Country, b: Country) => b.TotalConfirmed - a.TotalConfirmed
+    (a: Country, b: Country) => b.TotalConfirmed - a.TotalConfirmed,
   );
 
   sorted.forEach((value: Country) => {
@@ -138,7 +138,7 @@ async function setupData() {
 function setDeathsList(data: CountryInfoResponse) {
   const sorted = data.sort(
     (a: CountryInfo, b: CountryInfo) =>
-      getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date)
+      getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
   );
 
   sorted.forEach((value: CountryInfo) => {
@@ -166,7 +166,7 @@ function setTotalDeathsByCountry(data: CountryInfoResponse) {
 function setRecoveredList(data: CountryInfoResponse) {
   const sorted = data.sort(
     (a: CountryInfo, b: CountryInfo) =>
-      getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date)
+      getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
   );
 
   sorted.forEach((value: CountryInfo) => {
@@ -223,7 +223,7 @@ function renderChart(data: number[], labels: string[]) {
     'April',
     'May',
     'June',
-    'July'
+    'July',
   ];
   const defaultData = [0, 10, 5, 2, 20, 30, 45];
 
@@ -239,11 +239,11 @@ function renderChart(data: number[], labels: string[]) {
           label: 'Confirmed for the last two weeks',
           backgroundColor: '#feb72b',
           borderColor: '#feb72b',
-          data
-        }
-      ]
+          data,
+        },
+      ],
     },
-    options: {}
+    options: {},
   });
 }
 
@@ -252,7 +252,7 @@ function setChartData(data: CountryInfoResponse) {
   const chartLabel = data
     .slice(-14)
     .map((value: CountryInfo) =>
-      new Date(value.Date).toLocaleDateString().slice(5, -1)
+      new Date(value.Date).toLocaleDateString().slice(5, -1),
     );
 
   renderChart(chartData, chartLabel);
@@ -286,17 +286,17 @@ async function handleListClick(event: Event) {
 
   const { data: deathResponse } = await fetchCountryInfo(
     selectedId,
-    CovidStatus.Deaths
+    CovidStatus.Deaths,
   );
 
   const { data: recoveredResponse } = await fetchCountryInfo(
     selectedId,
-    CovidStatus.Recovered
+    CovidStatus.Recovered,
   );
 
   const { data: confirmedResponse } = await fetchCountryInfo(
     selectedId,
-    CovidStatus.Confirmed
+    CovidStatus.Confirmed,
   );
 
   console.log(confirmedResponse);

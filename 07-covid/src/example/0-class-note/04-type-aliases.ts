@@ -6,7 +6,7 @@ interface PersonI {
 
 const p: PersonI = {
   name: 'p',
-  age: 30
+  age: 30,
 };
 
 // 타입 별칭
@@ -17,5 +17,5 @@ type PersonT = {
 
 const t: PersonT = {
   name: 'p',
-  age: 30
+  age: 30,
 };

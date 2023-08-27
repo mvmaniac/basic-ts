@@ -1,7 +1,7 @@
 // 숫자형 이넘 (기본)
 enum Shoes1 {
   Nike,
-  Adidas
+  Adidas,
 }
 
 const myShoes1 = Shoes1.Nike;
@@ -10,7 +10,7 @@ console.log(myShoes1); // 0이 출력됨
 // 문자형 이넘
 enum Shoes2 {
   Nike = '나이키',
-  Adidas = '아디다스'
+  Adidas = '아디다스',
 }
 
 const myShoes2 = Shoes2.Nike;
@@ -19,7 +19,7 @@ console.log(myShoes1); // 나이키가 출력됨
 // 예제
 enum Answer {
   Yes = 'Y',
-  No = 'N'
+  No = 'N',
 }
 
 function askQuestion(answer: Answer) {

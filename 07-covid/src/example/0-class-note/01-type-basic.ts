@@ -25,7 +25,7 @@ const obj: object = {};
 
 const person: { name: string; age: number } = {
   name: 'Capt',
-  age: 100
+  age: 100,
 };
 
 // TS 진위값

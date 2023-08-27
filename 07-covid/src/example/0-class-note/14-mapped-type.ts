@@ -5,5 +5,5 @@ type HeroAges = { [K in Heroes]: number };
 const ages: HeroAges = {
   Hulk: 33,
   Capt: 100,
-  Thro: 1000
+  Thro: 1000,
 };

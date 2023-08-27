@@ -13,7 +13,7 @@ const colors: string[] = [
   'white',
   'white',
   'pink',
-  'pink'
+  'pink',
 ];
 
 let colorCandidate: string[] = colors.slice();
@@ -28,8 +28,8 @@ function shuffle(): void {
     color = color.concat(
       colorCandidate.splice(
         Math.floor(Math.random() * colorCandidate.length),
-        1
-      )
+        1,
+      ),
     );
   }
 }
@@ -80,7 +80,7 @@ function setCard(horizontal: number, vertical: number) {
               const endTime: number = new Date().getTime();
               alert(
                 `축하합니다! 
-                ${(endTime - startTime!.getTime()) / 1000}초 걸렸습니다!`
+                ${(endTime - startTime!.getTime()) / 1000}초 걸렸습니다!`,
               );
 
               (document.querySelector('#wrapper') as HTMLDivElement).innerHTML =
@@ -114,9 +114,12 @@ function setCard(horizontal: number, vertical: number) {
       [(card: HTMLDivElement, index: number) => void],
       void
     >(document.getElementsByClassName('card'), (card, index) => {
-      setTimeout(() => {
-        card.classList.add('flipped');
-      }, 1000 + 100 * index);
+      setTimeout(
+        () => {
+          card.classList.add('flipped');
+        },
+        1000 + 100 * index,
+      );
     });
 
     setTimeout(() => {

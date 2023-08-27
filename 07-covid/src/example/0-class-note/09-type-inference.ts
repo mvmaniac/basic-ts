@@ -33,7 +33,7 @@ interface DetailedDropdown<K> extends Dropdown<K> {
 
 const shoppingItem: Dropdown<string> = {
   value: 'abc',
-  title: 'hello'
+  title: 'hello',
 };
 
 // value 속성은 string으로 타입 추론 됨
@@ -41,7 +41,7 @@ const detailedItem: DetailedDropdown<string> = {
   title: 'abc',
   description: 'ab',
   value: 'a',
-  tag: 'a'
+  tag: 'a',
 };
 
 // Best Common Type

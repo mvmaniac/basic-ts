@@ -22,7 +22,7 @@ function createSpinnerElement(id) {
   wrapperDiv.setAttribute('id', id);
   wrapperDiv.setAttribute(
     'class',
-    'spinner-wrapper flex justify-center align-center'
+    'spinner-wrapper flex justify-center align-center',
   );
   const spinnerDiv = document.createElement('div');
   spinnerDiv.setAttribute('class', 'ripple-spinner');
@@ -80,11 +80,11 @@ async function handleListClick(event) {
   const { data: deathResponse } = await fetchCountryInfo(selectedId, 'deaths');
   const { data: recoveredResponse } = await fetchCountryInfo(
     selectedId,
-    'recovered'
+    'recovered',
   );
   const { data: confirmedResponse } = await fetchCountryInfo(
     selectedId,
-    'confirmed'
+    'confirmed',
   );
   console.log(confirmedResponse);
   endLoadingAnimation();
@@ -99,7 +99,7 @@ async function handleListClick(event) {
 
 function setDeathsList(data) {
   const sorted = data.sort(
-    (a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date)
+    (a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
   );
   sorted.forEach((value) => {
     const li = document.createElement('li');
@@ -125,7 +125,7 @@ function setTotalDeathsByCountry(data) {
 
 function setRecoveredList(data) {
   const sorted = data.sort(
-    (a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date)
+    (a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
   );
   sorted.forEach((value) => {
     const li = document.createElement('li');
@@ -180,7 +180,7 @@ function renderChart(data, labels) {
     'April',
     'May',
     'June',
-    'July'
+    'July',
   ];
   const defaultData = [0, 10, 5, 2, 20, 30, 45];
   Chart.defaults.global.defaultFontColor = '#f5eaea';
@@ -194,11 +194,11 @@ function renderChart(data, labels) {
           label: 'Confirmed for the last two weeks',
           backgroundColor: '#feb72b',
           borderColor: '#feb72b',
-          data
-        }
-      ]
+          data,
+        },
+      ],
     },
-    options: {}
+    options: {},
   });
 }
 
@@ -213,27 +213,27 @@ function setChartData(data) {
 function setTotalConfirmedNumber(data) {
   confirmedTotal.innerText = data.Countries.reduce(
     (total, current) => (total += current.TotalConfirmed),
-    0
+    0,
   );
 }
 
 function setTotalDeathsByWorld(data) {
   deathsTotal.innerText = data.Countries.reduce(
     (total, current) => (total += current.TotalDeaths),
-    0
+    0,
   );
 }
 
 function setTotalRecoveredByWorld(data) {
   recoveredTotal.innerText = data.Countries.reduce(
     (total, current) => (total += current.TotalRecovered),
-    0
+    0,
   );
 }
 
 function setCountryRanksByConfirmedCases(data) {
   const sorted = data.Countries.sort(
-    (a, b) => b.TotalConfirmed - a.TotalConfirmed
+    (a, b) => b.TotalConfirmed - a.TotalConfirmed,
   );
   sorted.forEach((value) => {
     const li = document.createElement('li');
